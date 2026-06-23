@@ -1,5 +1,13 @@
 # TAPM-Net-Tri-Channel-Adaptive-Physical-Modulation-Network-for-Battery-SOH-and-EOL-Prediction
 这是一个基于物理调制与多通道特征融合的锂离子电池健康状态（SOH）预测与寿命终止点（EOL）外推推演项目。模型融合了时序统计与电池退化物理特征，并结合 FiLM (Feature Modulation) 机制整合了环境温度和充放电倍率等静态工况。
+这是所使用的电池的原始数据的绘图概览
+<img width="1428" height="707" alt="image" src="https://github.com/user-attachments/assets/1cd7ed3a-299a-4d12-8c94-f5ef024fe2d3" />
+<img width="1428" height="707" alt="image" src="https://github.com/user-attachments/assets/ebb8ba93-b6a9-43a2-b7c5-0d7267e43260" />
+<img width="1428" height="707" alt="image" src="https://github.com/user-attachments/assets/098bd0ca-7684-45e0-9543-ccd43ad93a5e" />
+如下是程序从原始充放电数据中所提取的与电池寿命退化有关的特征
+<img width="1589" height="1769" alt="image" src="https://github.com/user-attachments/assets/06310085-9815-46c0-afd7-9df8ba35b432" />
+如下是选取一个未知的电池，去预测其寿命终止（以最大放电低于初始的80%为准）的充放电圈数
+<img width="759" height="387" alt="image" src="https://github.com/user-attachments/assets/41a259b1-52ca-4046-8970-283dbe3b60c9" />
 
 ##  快速开始 (Quick Start)
 
