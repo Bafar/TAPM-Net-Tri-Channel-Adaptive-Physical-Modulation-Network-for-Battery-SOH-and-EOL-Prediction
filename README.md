@@ -53,4 +53,4 @@ python scripts/train.py --csv_path data/processed/TJU_NCA_cleaned_dataset.csv
 训练完成后：
 - 训练好的模型与数据缩放器（Scaler）将自动保存至根目录下的 `tapm_net_model.pth`。
 - 测试电池的寿命预测趋势图将保存为项目根目录下的图片文件（例如 `CY35-05_1-#2_prediction.png`）。
-```
+- 模型还应该能够迁移到其它特征的电池数据，具体可详见本栏目后续项目。
