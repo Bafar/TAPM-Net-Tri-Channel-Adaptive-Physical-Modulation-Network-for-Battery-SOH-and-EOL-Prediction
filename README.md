@@ -14,8 +14,11 @@
 <img width="1428" height="707" alt="image" src="https://github.com/user-attachments/assets/098bd0ca-7684-45e0-9543-ccd43ad93a5e" />
 - 如下是程序从原始充放电数据中所提取的与电池寿命退化有关的特征
 <img width="1589" height="1769" alt="image" src="https://github.com/user-attachments/assets/06310085-9815-46c0-afd7-9df8ba35b432" />
-- 如下是选取一个未知的电池，去预测其寿命终止（以最大放电低于初始的80%为准）的充放电圈数
-<img width="759" height="387" alt="image" src="https://github.com/user-attachments/assets/41a259b1-52ca-4046-8970-283dbe3b60c9" />
+
+- 如下是选取一个未知的电池，去预测其寿命终止（以最大放电低于初始的80%为准）的充放电圈数，其中 $R^2$ 指标为97.91%，当然，在未知的电池上预测或有误差，这就是我们的迁移学习后续要解决的问题。
+
+<img width="3000" height="1500" alt="CY25-025_1-#2_prediction" src="https://github.com/user-attachments/assets/2397c71d-38cf-40e2-b5f5-d79772da8137" />
+
 
 ##  快速开始 (Quick Start)
 
@@ -39,7 +42,7 @@ pip install -r requirements.txt
 
 ### 3. 数据清洗与特征提取
 
-运行预处理脚本。该脚本会自动读取 `data/raw` 中的原始文件，进行物理硬剪裁过滤、时序 Hampel 异常值平滑与线性插值，最终提取出标准退化时序特征并保存至 `data/processed/` 文件夹：
+- 运行预处理脚本。该脚本会自动读取 `data/raw` 中的原始文件，进行物理硬剪裁过滤、时序 Hampel 异常值平滑与线性插值，最终提取出标准退化时序特征并保存至 `data/processed/` 文件夹：
 
 ```bash
 python scripts/run_preprocessing.py --raw_dir data/raw --out_path data/processed/TJU_NCA_cleaned_dataset.csv
@@ -47,7 +50,7 @@ python scripts/run_preprocessing.py --raw_dir data/raw --out_path data/processed
 
 ### 4. 模型训练与独立测试集评估
 
-执行训练脚本。程序将自动划分测试集（2块电池）与训练集（剩下的电池），你也可以自行修改训练集与测试集，训练三通道自适应物理调制网络（TAPM-Net），评估测试集电池的 MAE、RMSE、$R^2$ 等指标，并绘制全生命周期的 EOL 预测退化曲线：
+- 执行训练脚本。程序将自动划分测试集（2块电池）与训练集（剩下的电池），你也可以自行修改训练集与测试集，训练三通道自适应物理调制网络（TAPM-Net），评估测试集电池的 MAE、RMSE、 $R^2$ 等指标，并绘制全生命周期的 EOL 预测退化曲线：
 
 ```bash
 python scripts/train.py --csv_path data/processed/TJU_NCA_cleaned_dataset.csv
